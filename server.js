@@ -195,20 +195,20 @@ app.get("/ticket3/:id",async(req,res)=>{
       res.status(500).json({message:error.message})
   }
 })
-// app.post("/ticket/record", async (req, res) => { 
-//   const { id, busName, mobileNumber, ticketNo, seat } = req.body;
-//   try {
-//      for(let i = 0; i <= 40;i++){
-//         seat = i + 1;
-//       const ticket = await Ticket.insertMany(req.body);
-//       res.status(200).json(ticket);
-//      }
+app.post("/ticket/record", async (req, res) => { 
+  const { id, busName, mobileNumber, ticketNo, seat } = req.body;
+  try {
+     for(let i = 0; i <= 40;i++){
+        seat = i + 1;
+      const ticket = await Ticket.insertMany(req.body);
+      res.status(200).json(ticket);
+     }
 
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(500).json({ message: error.message });
-//   }
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
 
-// });
+});
 
 app.post("/ticket/rr",record.recordCreate);
