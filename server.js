@@ -211,4 +211,4 @@ app.get("/ticket3/:id",async(req,res)=>{
 
 // });
 
-// app.post("/ticket/rr",record.recordCreate);
+app.post("/ticket/rr",record.recordCreate);
